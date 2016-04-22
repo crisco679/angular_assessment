@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Assessment</title>
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body ng-controller="MyController as controller">
+    <label>Enter message</label>
+    <input type="text" ng-model="controller.message"/>
+    <div ng-show="controller.hiddenMessage">
+      <p>Message is:{{controller.firstMessage}}</p>
+      </div>
+    <div>
+    <!-- I'm close but can't figure out how to get the first message to display in my previous messages div on the second click -->
+    <ul>
+      <li ng-repeat="message in controller.previousMessage track by $index">Previous messages are:{{message}}</li>
+    </ul>
+  </div>
+      <button ng-click="controller.showMessage()">Submit</button>
+  </body>
+</html>
